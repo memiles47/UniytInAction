@@ -20,15 +20,15 @@ public class RayShooter : MonoBehaviour
         playerCamera = GetComponent<Camera>();
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -49,7 +49,7 @@ public class RayShooter : MonoBehaviour
                 }
             }
         }
-	}
+    }
     private IEnumerator SphereIndicator(Vector3 pos)
     {
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -63,6 +63,6 @@ public class RayShooter : MonoBehaviour
         int size = 12;
         float posX = playerCamera.pixelWidth / 2 - size / 4;
         float posY = playerCamera.pixelHeight / 2 - size / 2;
-        GUI.Label(new Rect(posX, posY, size, size), "*"); 
+        GUI.Label(new Rect(posX, posY, size, size), "*");
     }
 }
